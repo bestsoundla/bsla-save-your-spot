@@ -1,0 +1,345 @@
+<!-- ============================================================
+     SAVE YOUR SPOT — Wix Embed (single self-contained block)
+     Paste this entire file into:  Wix Editor → Embed → Custom Code → HTML iframe
+     Works inside an iframe sandbox — all styles & fonts are self-contained.
+     ============================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Save Your Spot — Music Creation Playground</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:100%;overflow-x:hidden}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    color:#f5f1e8;
+    background:#0f3b3b;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .sys{
+    position:relative;
+    width:100%;
+    padding:72px 24px 88px;
+    background:
+      radial-gradient(1200px 600px at 15% 0%, rgba(255,215,102,0.08), transparent 60%),
+      radial-gradient(900px 500px at 95% 100%, rgba(230,70,70,0.12), transparent 60%),
+      #0f3b3b;
+    overflow:hidden;
+  }
+  /* subtle grain */
+  .sys::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 0.96  0 0 0 0 0.94  0 0 0 0 0.88  0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    opacity:.35;pointer-events:none;mix-blend-mode:overlay;
+  }
+  /* confetti dots */
+  .confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+  .confetti span{
+    position:absolute;width:10px;height:10px;border-radius:2px;opacity:.55;
+    animation:float 9s ease-in-out infinite;
+  }
+  .confetti span:nth-child(1){top:8%;left:6%;background:#ffd766;transform:rotate(18deg)}
+  .confetti span:nth-child(2){top:18%;left:88%;background:#e64646;transform:rotate(-22deg);animation-delay:-2s}
+  .confetti span:nth-child(3){top:62%;left:4%;background:#4ab3a4;transform:rotate(42deg);animation-delay:-4s}
+  .confetti span:nth-child(4){top:78%;left:92%;background:#ffd766;transform:rotate(-12deg);animation-delay:-1s}
+  .confetti span:nth-child(5){top:40%;left:50%;background:#e64646;width:8px;height:8px;animation-delay:-3s}
+  @keyframes float{
+    0%,100%{transform:translateY(0) rotate(0)}
+    50%{transform:translateY(-14px) rotate(18deg)}
+  }
+
+  .wrap{max-width:1160px;margin:0 auto;position:relative;z-index:2;text-align:center}
+
+  /* Header */
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:'Inter',sans-serif;font-size:12px;font-weight:600;
+    letter-spacing:.18em;text-transform:uppercase;
+    color:#ffd766;margin-bottom:18px;
+    justify-content:center;
+  }
+  .eyebrow::before{
+    content:"";width:28px;height:1px;background:#ffd766;display:inline-block;
+  }
+  h1.headline{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:600;
+    font-size:clamp(44px,7vw,88px);
+    line-height:1.02;
+    letter-spacing:-.02em;
+    color:#f5f1e8;
+    max-width:900px;
+    margin:0 auto 18px;
+  }
+  h1.headline em{
+    font-style:italic;color:#ffd766;font-weight:600;
+  }
+  .subcopy{
+    font-size:clamp(16px,1.4vw,19px);
+    color:rgba(245,241,232,.78);
+    max-width:620px;margin:0 auto 32px;
+  }
+
+  /* Meta chips */
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px;justify-content:center}
+  .chip{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:9px 16px;border-radius:999px;
+    background:rgba(245,241,232,.08);
+    border:1px solid rgba(245,241,232,.18);
+    font-size:13px;font-weight:500;color:#f5f1e8;
+    backdrop-filter:blur(6px);
+  }
+  .chip svg{width:14px;height:14px;opacity:.85}
+
+  /* Main grid: image + info */
+  .grid{
+    display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start;
+    margin-bottom:56px;
+  }
+  @media (max-width:900px){.grid{grid-template-columns:1fr;gap:36px}}
+
+  .hero-card{
+    position:relative;border-radius:24px;overflow:hidden;
+    aspect-ratio:4/3;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,.5),0 0 0 1px rgba(245,241,232,.08);
+  }
+  .hero-card img{width:100%;height:100%;object-fit:cover;display:block}
+  .hero-card::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,transparent 55%,rgba(15,59,59,.55));
+  }
+  .hero-tag{
+    position:absolute;bottom:20px;left:20px;right:20px;z-index:2;
+    display:flex;justify-content:space-between;align-items:flex-end;gap:12px;
+    color:#f5f1e8;
+  }
+  .hero-tag .t{font-family:'Fraunces',serif;font-size:20px;font-weight:600}
+  .hero-tag .s{font-size:13px;opacity:.85}
+
+  .info{text-align:left}
+  .info h2{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:clamp(26px,2.6vw,34px);line-height:1.15;
+    margin-bottom:16px;color:#f5f1e8;
+  }
+  .info p{color:rgba(245,241,232,.78);margin-bottom:20px;font-size:16px}
+  .session-list{list-style:none;margin-bottom:28px}
+  .session-list li{
+    display:flex;align-items:center;gap:14px;
+    padding:14px 18px;border-radius:14px;
+    background:rgba(245,241,232,.06);
+    border:1px solid rgba(245,241,232,.12);
+    margin-bottom:10px;
+  }
+  .session-list .dot{
+    width:10px;height:10px;border-radius:50%;background:#ffd766;flex:none;
+    box-shadow:0 0 0 4px rgba(255,215,102,.18);
+  }
+  .session-list strong{color:#f5f1e8;font-weight:600}
+  .session-list span{color:rgba(245,241,232,.65);font-size:14px;margin-left:auto}
+
+  /* Urgency bar */
+  .urgency{
+    background:rgba(230,70,70,.14);
+    border:1px solid rgba(230,70,70,.35);
+    border-radius:14px;padding:16px 18px;margin-bottom:28px;
+  }
+  .urgency .top{display:flex;justify-content:space-between;margin-bottom:10px;font-size:13px;color:#f5f1e8;font-weight:600}
+  .urgency .top em{font-style:normal;color:#ffb3b3}
+  .meter{height:6px;border-radius:999px;background:rgba(245,241,232,.12);overflow:hidden}
+  .meter i{display:block;height:100%;width:72%;background:linear-gradient(90deg,#ffd766,#e64646);border-radius:999px}
+
+  /* Pricing cards */
+  .pricing{margin-top:20px;text-align:center}
+  .pricing h3{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:clamp(24px,2.4vw,32px);margin-bottom:8px;color:#f5f1e8;
+  }
+  .pricing p.lead{color:rgba(245,241,232,.75);margin:0 auto 24px;font-size:15px;max-width:560px}
+  .cards{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:36px;
+    text-align:center;
+  }
+  @media (max-width:820px){.cards{grid-template-columns:1fr}}
+  .card{
+    position:relative;
+    background:rgba(245,241,232,.06);
+    border:1px solid rgba(245,241,232,.14);
+    border-radius:18px;padding:26px 22px;
+    display:flex;flex-direction:column;gap:12px;align-items:center;
+    transition:transform .25s ease,border-color .25s ease,background .25s ease;
+  }
+  .card:hover{transform:translateY(-3px);border-color:rgba(255,215,102,.45);background:rgba(245,241,232,.09)}
+  .card.popular{
+    border-color:rgba(255,215,102,.55);
+    background:linear-gradient(180deg,rgba(255,215,102,.08),rgba(245,241,232,.04));
+  }
+  .popular-tag{
+    position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+    background:#ffd766;color:#0f3b3b;
+    font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    padding:5px 10px;border-radius:999px;
+  }
+  .card .icon{
+    width:44px;height:44px;border-radius:12px;
+    background:rgba(255,215,102,.15);
+    display:flex;align-items:center;justify-content:center;color:#ffd766;
+  }
+  .card .icon svg{width:22px;height:22px}
+  .card h4{font-family:'Fraunces',serif;font-weight:600;font-size:22px;color:#f5f1e8}
+  .card .price{font-family:'Fraunces',serif;font-weight:600;font-size:38px;line-height:1;color:#ffd766}
+  .card .price small{font-size:14px;color:rgba(245,241,232,.7);font-family:'Inter',sans-serif;font-weight:500;margin-left:4px}
+  .card .desc{font-size:14px;color:rgba(245,241,232,.75);flex:1;text-align:center}
+  .card a.btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:12px 18px;border-radius:10px;
+    background:#e64646;color:#fff;font-weight:600;font-size:14px;
+    text-decoration:none;transition:background .2s;
+    margin-top:6px;
+  }
+  .card a.btn:hover{background:#c93333}
+  .card.popular a.btn{background:#ffd766;color:#0f3b3b}
+  .card.popular a.btn:hover{background:#f5c94e}
+
+  /* Footer CTAs */
+  .cta-row{
+    display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center;
+    padding-top:8px;
+  }
+  .cta-primary,.cta-ghost{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:16px 28px;border-radius:12px;
+    font-weight:600;font-size:15px;text-decoration:none;
+    transition:all .2s;
+  }
+  .cta-primary{background:#e64646;color:#fff;box-shadow:0 12px 30px -10px rgba(230,70,70,.6)}
+  .cta-primary:hover{background:#c93333;transform:translateY(-2px)}
+  .cta-ghost{background:transparent;color:#f5f1e8;border:1px solid rgba(245,241,232,.3)}
+  .cta-ghost:hover{border-color:#ffd766;color:#ffd766}
+
+  .foot-note{
+    text-align:center;margin-top:22px;
+    font-size:13px;color:rgba(245,241,232,.55);
+  }
+  .foot-note a{color:#ffd766;text-decoration:none}
+</style>
+</head>
+<body>
+<section class="sys">
+  <div class="confetti" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <div class="wrap">
+    <div class="eyebrow">Music Creation Playground</div>
+    <h1 class="headline">Save your <em>spot.</em><br>Make some noise.</h1>
+    <p class="subcopy">A hands-on music adventure for ages 3–12 — instruments, songwriting, and a take-home creation. Limited to 30 kids per session.</p>
+
+    <div class="chips">
+      <span class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Next session: Sun, May 17
+      </span>
+      <span class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        Hands-on music + songwriting
+      </span>
+      <span class="chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Ages 3–12
+      </span>
+    </div>
+
+    <!-- HERO + INFO -->
+    <div class="grid">
+      <div class="hero-card">
+        <img src="https://static.wixstatic.com/media/1b96a0_savespot_hero.jpg" alt="Kids playing instruments at Music Creation Playground" onerror="this.src='https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=1200&q=80';">
+        <div class="hero-tag">
+          <div>
+            <div class="t">Best Sound LA • Los Angeles</div>
+            <div class="s">Exact location sent 2 weeks before each session</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info">
+        <h2>Summer 2026 Sessions</h2>
+        <p>Two standalone Sunday afternoons — come to one or both. Each session is a full 5-hour creative playground.</p>
+
+        <ul class="session-list">
+          <li><span class="dot"></span><strong>Session 1 — Sun, May 17</strong><span>12–5 PM</span></li>
+          <li><span class="dot"></span><strong>Session 2 — Sun, June 21</strong><span>12–5 PM</span></li>
+        </ul>
+
+        <div class="urgency">
+          <div class="top"><span>Seats filling fast</span><em>72% booked</em></div>
+          <div class="meter"><i></i></div>
+        </div>
+
+        <a href="https://www.bestsoundla.com/event-details/music-creation-playground" target="_top" class="cta-primary" style="width:100%;justify-content:center">
+          Buy Tickets
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- PRICING -->
+    <div class="pricing">
+      <h3>Pick your package</h3>
+      <p class="lead">Every package includes all activities, snacks, and a take-home creation. Sibling discounts because music is better together.</p>
+
+      <div class="cards">
+        <div class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h4>Single Explorer</h4>
+          <div class="price">$100<small>/child</small></div>
+          <div class="desc">One child, one full afternoon of instruments, songwriting, and take-home creation.</div>
+          <a href="https://www.bestsoundla.com/event-details/music-creation-playground" target="_top" class="btn">Buy Tickets</a>
+        </div>
+
+        <div class="card popular">
+          <div class="popular-tag">Most popular</div>
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h4>Sibling Duo</h4>
+          <div class="price">$180<small>/2 kids</small></div>
+          <div class="desc">Bring a sibling — $90 each. Music is better together.</div>
+          <a href="https://www.bestsoundla.com/event-details/music-creation-playground" target="_top" class="btn">Buy Tickets</a>
+        </div>
+
+        <div class="card">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/><path d="M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"/></svg>
+          </div>
+          <h4>Group Rate</h4>
+          <div class="price">$80<small>/child (3+)</small></div>
+          <div class="desc">Three or more kids — best value per child. Great for friend groups or private bookings.</div>
+          <a href="https://www.bestsoundla.com/event-details/music-creation-playground" target="_top" class="btn">Buy Tickets</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a href="https://www.bestsoundla.com/event-details/music-creation-playground" target="_top" class="cta-primary">
+        Reserve Your Spot
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="mailto:contact@bestsoundla.com" target="_top" class="cta-ghost">Questions? Email us</a>
+    </div>
+
+    <p class="foot-note">Refunds available up to 7 days before each session · <a href="tel:3237906099">323.790.6099</a></p>
+  </div>
+</section>
+</body>
+</html>
