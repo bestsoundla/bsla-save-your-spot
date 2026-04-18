@@ -213,14 +213,24 @@
   .card .price{font-family:'Fraunces',serif;font-weight:600;font-size:38px;line-height:1;color:#ffd766}
   .card .price small{font-size:14px;color:rgba(245,241,232,.7);font-family:'Inter',sans-serif;font-weight:500;margin-left:4px}
   .card .desc{font-size:14px;color:rgba(245,241,232,.75);flex:1;text-align:center}
-  .card a.btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:8px;
-    padding:12px 18px;border-radius:10px;
-    background:#e64646;color:#fff;font-weight:600;font-size:14px;
-    text-decoration:none;transition:background .2s;
+  .card .btn-label{
+    font-size:11px;font-weight:600;color:rgba(245,241,232,.55);
+    text-transform:uppercase;letter-spacing:.14em;
     margin-top:6px;
   }
-  .card a.btn:hover{background:#c93333}
+  .card .btn-group{
+    display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;
+  }
+  .card a.btn{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+    padding:10px 8px;border-radius:10px;
+    background:#e64646;color:#fff;font-weight:600;font-size:13px;
+    text-decoration:none;transition:background .2s,transform .15s;
+    line-height:1.2;
+  }
+  .card a.btn:hover{background:#c93333;transform:translateY(-1px)}
+  .card a.btn .btn-date{font-size:14px;font-weight:700}
+  .card a.btn .btn-day{font-size:10px;font-weight:500;opacity:.85;text-transform:uppercase;letter-spacing:.1em}
   .card.popular a.btn{background:#ffd766;color:#0f3b3b}
   .card.popular a.btn:hover{background:#f5c94e}
 
@@ -328,7 +338,15 @@
           <h4>Single Explorer</h4>
           <div class="price">$100<small>/child</small></div>
           <div class="desc">One child, one full afternoon of instruments, songwriting, and take-home creation.</div>
-          <a href="https://www.bestsoundla.com/event-details/music-creation-playground" target="_top" class="btn">Buy Tickets</a>
+          <div class="btn-label">Pick your date</div>
+          <div class="btn-group">
+            <a href="https://www.bestsoundla.com/event-details/music-creation-playground-may-9" target="_top" class="btn">
+              <span class="btn-day">Sat</span><span class="btn-date">May 9</span>
+            </a>
+            <a href="https://www.bestsoundla.com/event-details/music-creation-playground" target="_top" class="btn">
+              <span class="btn-day">Sun</span><span class="btn-date">Jun 7</span>
+            </a>
+          </div>
         </div>
 
         <div class="card popular">
@@ -339,7 +357,15 @@
           <h4>Sibling Duo</h4>
           <div class="price">$180<small>/2 kids</small></div>
           <div class="desc">Bring a sibling — $90 each. Music is better together.</div>
-          <a href="https://www.bestsoundla.com/event-details/music-creation-playground" target="_top" class="btn">Buy Tickets</a>
+          <div class="btn-label">Pick your date</div>
+          <div class="btn-group">
+            <a href="https://www.bestsoundla.com/event-details/music-creation-playground-may-9" target="_top" class="btn">
+              <span class="btn-day">Sat</span><span class="btn-date">May 9</span>
+            </a>
+            <a href="https://www.bestsoundla.com/event-details/music-creation-playground" target="_top" class="btn">
+              <span class="btn-day">Sun</span><span class="btn-date">Jun 7</span>
+            </a>
+          </div>
         </div>
 
         <div class="card">
@@ -349,7 +375,15 @@
           <h4>Group Rate</h4>
           <div class="price">$80<small>/child (3+)</small></div>
           <div class="desc">Three or more kids — best value per child. Great for friend groups or private bookings.</div>
-          <a href="https://www.bestsoundla.com/event-details/music-creation-playground" target="_top" class="btn">Buy Tickets</a>
+          <div class="btn-label">Pick your date</div>
+          <div class="btn-group">
+            <a href="https://www.bestsoundla.com/event-details/music-creation-playground-may-9" target="_top" class="btn">
+              <span class="btn-day">Sat</span><span class="btn-date">May 9</span>
+            </a>
+            <a href="https://www.bestsoundla.com/event-details/music-creation-playground" target="_top" class="btn">
+              <span class="btn-day">Sun</span><span class="btn-date">Jun 7</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
