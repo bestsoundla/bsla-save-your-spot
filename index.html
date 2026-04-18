@@ -163,10 +163,10 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What ages is the Music Creation Playground for?",
+      "name": "Who is it for and what should families expect?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The workshop is designed for kids ages 2–12. Activities flex to each age group so younger and older kids both stay engaged."
+        "text": "The workshop is designed for kids ages 2–12, with activities that flex to each age group. Parents stay on-site for the full 5 hours — it's a creative space where families can hang while the kids make music. Kids should bring water, a snack, and comfy clothes. We provide everything else — instruments, microphones, gear, and all creative supplies."
       }
     },
     {
@@ -179,42 +179,10 @@
     },
     {
       "@type": "Question",
-      "name": "What's included in the ticket price?",
+      "name": "What's included and how does pricing work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "All instruments, all activities, hands-on songwriting and recording time, and a take-home creation. Just show up and play."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What should my child bring?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Water, a snack, and comfy clothes. We provide everything else — instruments, microphones, gear, and all creative supplies."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do parents stay on-site?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes — parents stay on-site for the full 5 hours. It's a creative space where families can hang while the kids make music."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does the sibling discount work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "$100 for one child, $180 for 2 siblings ($90 each), $360 for 3, and $440 for 4. Music is better together."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What's the refund policy?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Full refunds are available up to 4 days before the event start time. No refunds within 4 days of the event."
+        "text": "Your ticket covers all instruments, all activities, hands-on songwriting and recording time, and a take-home creation. Pricing: $100 for one child, $180 for 2 siblings ($90 each), $360 for 3, and $440 for 4. Music is better together."
       }
     },
     {
@@ -227,10 +195,10 @@
     },
     {
       "@type": "Question",
-      "name": "Can I attend both sessions?",
+      "name": "What's the refund policy, and can we attend both sessions?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — each session is standalone and designed with fresh activities, so kids can attend one or both. Book each date separately."
+        "text": "Full refunds are available up to 4 days before the event start time. No refunds within 4 days of the event. Each session is standalone with fresh activities, so kids can attend one or both — just book each date separately."
       }
     },
     {
@@ -505,35 +473,21 @@
   .faq h3 em{color:#ffd766;font-style:italic;font-weight:500}
   .faq .lead{
     text-align:center;color:rgba(245,241,232,.7);
-    margin-bottom:28px;font-size:15px;
+    margin-bottom:32px;font-size:15px;
   }
-  .faq-list{display:flex;flex-direction:column;gap:10px;max-width:720px;margin:0 auto}
+  .faq-list{display:flex;flex-direction:column;gap:14px;max-width:720px;margin:0 auto}
   .faq-item{
     background:rgba(245,241,232,.05);
     border:1px solid rgba(245,241,232,.1);
     border-radius:12px;
-    overflow:hidden;
-    transition:background .2s;
+    padding:20px 22px;
   }
-  .faq-item[open]{background:rgba(245,241,232,.08);border-color:rgba(255,215,102,.25)}
-  .faq-item summary{
-    cursor:pointer;list-style:none;
-    padding:18px 22px;
+  .faq-item .q{
     font-weight:600;font-size:16px;
-    display:flex;justify-content:space-between;align-items:center;gap:16px;
     color:#f5f1e8;
+    margin-bottom:10px;
   }
-  .faq-item summary::-webkit-details-marker{display:none}
-  .faq-item summary::after{
-    content:"+";
-    font-size:22px;font-weight:300;
-    color:#ffd766;
-    transition:transform .2s;
-    flex-shrink:0;
-  }
-  .faq-item[open] summary::after{content:"−"}
   .faq-item .a{
-    padding:0 22px 20px 22px;
     color:rgba(245,241,232,.78);
     font-size:15px;line-height:1.6;
   }
@@ -688,55 +642,35 @@
       <p class="lead">Everything you need to know before you save your spot.</p>
 
       <div class="faq-list">
-        <details class="faq-item">
-          <summary>What ages is the Music Creation Playground for?</summary>
-          <div class="a">The workshop is designed for kids ages 2–12. Activities flex to each age group so younger and older kids both stay engaged.</div>
-        </details>
+        <div class="faq-item">
+          <div class="q">Who is it for and what should families expect?</div>
+          <div class="a">The workshop is designed for kids <strong>ages 2–12</strong>, with activities that flex to each age group. <strong>Parents stay on-site</strong> for the full 5 hours — it's a creative space where families can hang while the kids make music. Kids should bring water, a snack, and comfy clothes. We provide everything else — instruments, microphones, gear, and all creative supplies.</div>
+        </div>
 
-        <details class="faq-item">
-          <summary>When and where does it happen?</summary>
+        <div class="faq-item">
+          <div class="q">When and where does it happen?</div>
           <div class="a">Two standalone sessions: <strong>Saturday, May 9, 2026</strong> and <strong>Sunday, June 7, 2026</strong> — both from 12–5 PM in Los Angeles. The exact address is sent to ticket holders about 2 weeks before the session.</div>
-        </details>
+        </div>
 
-        <details class="faq-item">
-          <summary>What's included in the ticket price?</summary>
-          <div class="a">All instruments, all activities, hands-on songwriting and recording time, and a take-home creation. Just show up and play.</div>
-        </details>
+        <div class="faq-item">
+          <div class="q">What's included and how does pricing work?</div>
+          <div class="a">Your ticket covers all instruments, all activities, hands-on songwriting and recording time, and a take-home creation. Pricing: <strong>$100</strong> for one child, <strong>$180</strong> for 2 siblings ($90 each), <strong>$360</strong> for 3, and <strong>$440</strong> for 4. Music is better together.</div>
+        </div>
 
-        <details class="faq-item">
-          <summary>What should my child bring?</summary>
-          <div class="a">Water, a snack, and comfy clothes. We provide everything else — instruments, microphones, gear, and all creative supplies.</div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Do parents stay on-site?</summary>
-          <div class="a">Yes — parents stay on-site for the full 5 hours. It's a creative space where families can hang while the kids make music.</div>
-        </details>
-
-        <details class="faq-item">
-          <summary>How does the sibling discount work?</summary>
-          <div class="a">$100 for one child, $180 for 2 siblings ($90 each), $360 for 3, and $440 for 4. Music is better together.</div>
-        </details>
-
-        <details class="faq-item">
-          <summary>What's the refund policy?</summary>
-          <div class="a">Full refunds are available up to 4 days before the event start time. No refunds within 4 days of the event.</div>
-        </details>
-
-        <details class="faq-item">
-          <summary>How many kids per session?</summary>
+        <div class="faq-item">
+          <div class="q">How many kids per session?</div>
           <div class="a">Each session is capped at <strong>40 kids</strong> to keep things hands-on. Spots fill fast — reserve early to lock in your preferred date.</div>
-        </details>
+        </div>
 
-        <details class="faq-item">
-          <summary>Can I attend both sessions?</summary>
-          <div class="a">Yes — each session is standalone and designed with fresh activities, so kids can attend one or both. Book each date separately.</div>
-        </details>
+        <div class="faq-item">
+          <div class="q">What's the refund policy, and can we attend both sessions?</div>
+          <div class="a">Full refunds are available up to <strong>4 days before</strong> the event start time. No refunds within 4 days of the event. Each session is standalone with fresh activities, so kids can attend one or both — just book each date separately.</div>
+        </div>
 
-        <details class="faq-item">
-          <summary>How do I get in touch?</summary>
+        <div class="faq-item">
+          <div class="q">How do I get in touch?</div>
           <div class="a">Email <a href="mailto:contact@bestsoundla.com">contact@bestsoundla.com</a> or call <a href="tel:3237906099">323.790.6099</a>.</div>
-        </details>
+        </div>
       </div>
     </section>
   </div>
