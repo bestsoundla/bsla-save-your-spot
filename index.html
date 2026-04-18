@@ -112,17 +112,15 @@
     box-shadow:0 30px 60px -20px rgba(0,0,0,.5),0 0 0 1px rgba(245,241,232,.08);
   }
   .hero-card img{width:100%;height:100%;object-fit:cover;display:block}
-  .hero-card::after{
-    content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg,transparent 55%,rgba(15,59,59,.55));
+  .hero-caption{
+    margin-top:14px;padding:14px 18px;
+    background:rgba(245,241,232,.06);
+    border:1px solid rgba(245,241,232,.14);
+    border-radius:12px;
+    color:#f5f1e8;text-align:left;
   }
-  .hero-tag{
-    position:absolute;bottom:20px;left:20px;right:20px;z-index:2;
-    display:flex;justify-content:space-between;align-items:flex-end;gap:12px;
-    color:#f5f1e8;
-  }
-  .hero-tag .t{font-family:'Fraunces',serif;font-size:20px;font-weight:600}
-  .hero-tag .s{font-size:13px;opacity:.85}
+  .hero-caption .t{font-family:'Fraunces',serif;font-size:18px;font-weight:600;margin-bottom:2px;color:#f5f1e8}
+  .hero-caption .s{font-size:13px;color:rgba(245,241,232,.72)}
 
   .info{text-align:left}
   .info h2{
@@ -260,13 +258,13 @@
 
     <!-- HERO + INFO -->
     <div class="grid">
-      <div class="hero-card">
-        <img src="hero.jpg" alt="Home music studio with keys, guitars, and microphone at Best Sound LA">
-        <div class="hero-tag">
-          <div>
-            <div class="t">Best Sound LA • Los Angeles</div>
-            <div class="s">Exact location sent 2 weeks before the session</div>
-          </div>
+      <div>
+        <div class="hero-card">
+          <img src="hero.jpg" alt="Home music studio with keys, guitars, and microphone at Best Sound LA">
+        </div>
+        <div class="hero-caption">
+          <div class="t">Best Sound LA • Los Angeles</div>
+          <div class="s">Exact location sent 2 weeks before the session</div>
         </div>
       </div>
 
