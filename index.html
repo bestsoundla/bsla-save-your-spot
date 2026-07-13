@@ -2,52 +2,15 @@
      SAVE YOUR SPOT — Wix Embed (single self-contained block)
      Paste this entire file into:  Wix Editor → Embed → Custom Code → HTML iframe
      Works inside an iframe sandbox — all styles & fonts are self-contained.
+     STATE: No workshops currently scheduled — waitlist mode.
      ============================================================ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Save Your Spot — Music Creation Playground</title>
-<meta name="description" content="Hands-on music workshop for kids ages 2–12 in Los Angeles. Live instruments, songwriting & take-home creations. Save your spot for June 28.">
-
-<!-- Event schema: June 28 -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Event",
-  "name": "Music Creation Playground — June 28",
-  "description": "A hands-on music adventure for kids ages 2–12. Live instruments, songwriting, and a take-home creation. Led by professional musicians in an intimate Los Angeles setting.",
-  "startDate": "2026-06-28T12:00:00-07:00",
-  "endDate": "2026-06-28T17:00:00-07:00",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "location": {
-    "@type": "Place",
-    "name": "Best Sound LA — Location announced 2 weeks prior",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Los Angeles",
-      "addressRegion": "CA",
-      "addressCountry": "US"
-    }
-  },
-  "image": "https://bestsoundla.github.io/bsla-save-your-spot/hero.jpg",
-  "organizer": {
-    "@type": "Organization",
-    "name": "Best Sound LA",
-    "url": "https://www.bestsoundla.com"
-  },
-  "offers": {
-    "@type": "Offer",
-    "url": "https://www.bestsoundla.com/event-details/music-creation-playground-june-28th",
-    "price": "100.00",
-    "priceCurrency": "USD",
-    "availability": "https://schema.org/InStock",
-    "validFrom": "2026-04-21T00:00:00-07:00"
-  }
-}
-</script>
+<title>Music Creation Playground — Join the Waitlist | Best Sound LA</title>
+<meta name="description" content="Hands-on music workshops for kids ages 2–12 in Los Angeles. Next session dates coming soon — join the waitlist to be the first to know.">
 
 <!-- LocalBusiness / MusicSchool schema -->
 <script type="application/ld+json">
@@ -133,10 +96,10 @@
     },
     {
       "@type": "Question",
-      "name": "When and where does it happen?",
+      "name": "When is the next session?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "One session: Sunday, June 28, 2026, 12–5 PM in Los Angeles. The exact address is sent to ticket holders about 2 weeks before the session."
+        "text": "Next dates are still being finalized. Email contact@bestsoundla.com to join the waitlist and you'll be the first to know when the next session is announced."
       }
     },
     {
@@ -144,7 +107,7 @@
       "name": "What's included and how does pricing work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Your ticket covers all instruments, all activities, hands-on songwriting and recording time, and a take-home creation. Pricing: $100 for one child, $180 for 2 siblings ($90 each), $360 for 3, and $440 for 4. Music is better together."
+        "text": "Each session runs 12–5 PM in Los Angeles. Your ticket covers all instruments, all activities, hands-on songwriting and recording time, and a take-home creation. Pricing: $100 for one child, $180 for 2 siblings ($90 each), $360 for 3, and $440 for 4. Music is better together."
       }
     },
     {
@@ -152,15 +115,7 @@
       "name": "How many kids per session?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Each session is capped at 40 kids to keep things hands-on. Spots fill fast — reserve early to lock in your preferred date."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What's the refund policy?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Full refunds are available up to 4 days before the event start time. No refunds within 4 days of the event. Reserve early to lock in your spot."
+        "text": "Each session is capped at 40 kids to keep things hands-on. Waitlist members get first access when the next date opens."
       }
     },
     {
@@ -197,14 +152,12 @@
       #0f3b3b;
     overflow:hidden;
   }
-  /* subtle grain */
   .sys::before{
     content:"";
     position:absolute;inset:0;
     background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 0.96  0 0 0 0 0.94  0 0 0 0 0.88  0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
     opacity:.35;pointer-events:none;mix-blend-mode:overlay;
   }
-  /* confetti dots */
   .confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}
   .confetti span{
     position:absolute;width:10px;height:10px;border-radius:2px;opacity:.55;
@@ -222,7 +175,6 @@
 
   .wrap{max-width:1160px;margin:0 auto;position:relative;z-index:2;text-align:center}
 
-  /* Header */
   .eyebrow{
     display:inline-flex;align-items:center;gap:10px;
     font-family:'Inter',sans-serif;font-size:12px;font-weight:600;
@@ -252,7 +204,6 @@
     max-width:620px;margin:0 auto 32px;
   }
 
-  /* Meta chips */
   .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px;justify-content:center}
   .chip{
     display:inline-flex;align-items:center;gap:8px;
@@ -263,8 +214,8 @@
     backdrop-filter:blur(6px);
   }
   .chip svg{width:14px;height:14px;opacity:.85}
+  .chip.status{background:rgba(255,215,102,.14);border-color:rgba(255,215,102,.45);color:#ffd766}
 
-  /* Main grid: image + info */
   .grid{
     display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start;
     margin-bottom:56px;
@@ -294,50 +245,24 @@
     margin-bottom:16px;color:#f5f1e8;
   }
   .info p{color:rgba(245,241,232,.78);margin-bottom:20px;font-size:16px}
-  .session-list{list-style:none;margin-bottom:28px}
-  .session-picker{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
-  @media (max-width:560px){.session-picker{grid-template-columns:1fr}}
-  .session-card{
-    display:block;padding:18px 16px;border-radius:14px;
-    background:rgba(245,241,232,.06);
-    border:1px solid rgba(245,241,232,.14);
-    text-decoration:none;color:#f5f1e8;
-    transition:transform .2s ease,border-color .2s ease,background .2s ease;
-  }
-  .session-card:hover{
-    transform:translateY(-2px);
-    border-color:rgba(255,215,102,.55);
-    background:rgba(255,215,102,.08);
-  }
-  .session-day{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:#ffd766;font-weight:600}
-  .session-date{font-family:'Fraunces',serif;font-size:20px;font-weight:600;margin:2px 0 4px}
-  .session-time{font-size:13px;color:rgba(245,241,232,.72)}
-  .session-list li{
-    display:flex;align-items:center;gap:14px;
-    padding:14px 18px;border-radius:14px;
-    background:rgba(245,241,232,.06);
-    border:1px solid rgba(245,241,232,.12);
-    margin-bottom:10px;
-  }
-  .session-list .dot{
-    width:10px;height:10px;border-radius:50%;background:#ffd766;flex:none;
-    box-shadow:0 0 0 4px rgba(255,215,102,.18);
-  }
-  .session-list strong{color:#f5f1e8;font-weight:600}
-  .session-list span{color:rgba(245,241,232,.65);font-size:14px;margin-left:auto}
 
-  /* Urgency bar */
-  .urgency{
-    background:rgba(230,70,70,.14);
-    border:1px solid rgba(230,70,70,.35);
-    border-radius:14px;padding:16px 18px;margin-bottom:28px;
+  .waitlist-card{
+    background:linear-gradient(180deg,rgba(255,215,102,.10),rgba(245,241,232,.04));
+    border:1px solid rgba(255,215,102,.45);
+    border-radius:16px;padding:24px 22px;margin-bottom:24px;
   }
-  .urgency .top{display:flex;justify-content:space-between;margin-bottom:10px;font-size:13px;color:#f5f1e8;font-weight:600}
-  .urgency .top em{font-style:normal;color:#ffb3b3}
-  .meter{height:6px;border-radius:999px;background:rgba(245,241,232,.12);overflow:hidden}
-  .meter i{display:block;height:100%;width:72%;background:linear-gradient(90deg,#ffd766,#e64646);border-radius:999px}
+  .waitlist-card .lbl{
+    font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    color:#ffd766;margin-bottom:8px;
+  }
+  .waitlist-card .t{
+    font-family:'Fraunces',serif;font-size:22px;font-weight:600;
+    color:#f5f1e8;margin-bottom:8px;line-height:1.25;
+  }
+  .waitlist-card .d{
+    font-size:14px;color:rgba(245,241,232,.75);margin-bottom:18px;line-height:1.55;
+  }
 
-  /* Pricing cards */
   .pricing{margin-top:20px;text-align:center}
   .pricing h3{
     font-family:'Fraunces',serif;font-weight:600;
@@ -378,28 +303,7 @@
   .card .price{font-family:'Fraunces',serif;font-weight:600;font-size:38px;line-height:1;color:#ffd766}
   .card .price small{font-size:14px;color:rgba(245,241,232,.7);font-family:'Inter',sans-serif;font-weight:500;margin-left:4px}
   .card .desc{font-size:14px;color:rgba(245,241,232,.75);flex:1;text-align:center}
-  .card .btn-label{
-    font-size:11px;font-weight:600;color:rgba(245,241,232,.55);
-    text-transform:uppercase;letter-spacing:.14em;
-    margin-top:6px;
-  }
-  .card .btn-group{
-    display:grid;grid-template-columns:1fr;gap:8px;width:100%;
-  }
-  .card a.btn{
-    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
-    padding:10px 8px;border-radius:10px;
-    background:#e64646;color:#fff;font-weight:600;font-size:13px;
-    text-decoration:none;transition:background .2s,transform .15s;
-    line-height:1.2;
-  }
-  .card a.btn:hover{background:#c93333;transform:translateY(-1px)}
-  .card a.btn .btn-date{font-size:14px;font-weight:700}
-  .card a.btn .btn-day{font-size:10px;font-weight:500;opacity:.85;text-transform:uppercase;letter-spacing:.1em}
-  .card.popular a.btn{background:#ffd766;color:#0f3b3b}
-  .card.popular a.btn:hover{background:#f5c94e}
 
-  /* Footer CTAs */
   .cta-row{
     display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center;
     padding-top:8px;
@@ -421,7 +325,6 @@
   }
   .foot-note a{color:#ffd766;text-decoration:none}
 
-  /* FAQ */
   .faq{
     margin-top:56px;padding-top:40px;
     border-top:1px solid rgba(245,241,232,.12);
@@ -469,9 +372,9 @@
     <p class="subcopy">A hands-on music adventure for ages 2–12 — instruments, songwriting, and a take-home creation. Limited to 40 kids per session.</p>
 
     <div class="chips">
-      <span class="chip">
+      <span class="chip status">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-        Sessions: June 28
+        Next dates coming soon
       </span>
       <span class="chip">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
@@ -496,33 +399,26 @@
       </div>
 
       <div class="info">
-        <h2>Upcoming Sessions</h2>
-        <p>A 5-hour weekend afternoon packed with instruments, songwriting, and play.</p>
+        <h2>Next session — coming soon</h2>
+        <p>We're finalizing dates for the next Music Creation Playground. Join the waitlist and you'll be the first to know when tickets go live — waitlist members get first access before public seats open.</p>
 
-        <div class="session-picker">
-          <a href="https://www.bestsoundla.com/event-details/music-creation-playground-june-28th" target="_blank" rel="noopener" class="session-card">
-            <div class="session-day">Sunday</div>
-            <div class="session-date">June 28, 2026</div>
-            <div class="session-time">12–5 PM · Buy Tickets →</div>
+        <div class="waitlist-card">
+          <div class="lbl">Join the waitlist</div>
+          <div class="t">Be the first to know when the next date drops.</div>
+          <div class="d">Send us your kid's name + age and we'll email you the moment the next session is scheduled. No spam, ever.</div>
+          <a href="mailto:contact@bestsoundla.com?subject=Music%20Creation%20Playground%20Waitlist&body=Hi%20Best%20Sound%20LA%20%E2%80%94%20please%20add%20me%20to%20the%20Music%20Creation%20Playground%20waitlist.%0A%0AKid's%20name%3A%20%0AKid's%20age%3A%20%0AParent%20name%3A%20%0APreferred%20contact%3A%20%0A%0AThanks%21" class="cta-primary" style="width:100%;justify-content:center">
+            Email us to join the waitlist
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </a>
         </div>
 
-        <div class="urgency">
-          <div class="top"><span>Seats filling fast</span><em>72% booked</em></div>
-          <div class="meter"><i></i></div>
-        </div>
-
-        <p style="font-size:13px;color:rgba(245,241,232,.6);text-align:center;margin-bottom:8px">↑ Click a session above to buy tickets</p>
-        <a href="https://www.bestsoundla.com/event-details/music-creation-playground-june-28th" target="_blank" rel="noopener" class="cta-primary" style="width:100%;justify-content:center">
-          Buy Tickets for June 28
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </a>
+        <p style="font-size:13px;color:rgba(245,241,232,.6);text-align:center;margin:0">Or call <a href="tel:3237906099" style="color:#ffd766;text-decoration:none">323.790.6099</a></p>
       </div>
     </div>
 
     <!-- PRICING -->
     <div class="pricing">
-      <h3>Pick your package</h3>
+      <h3>When we return — here's the pricing</h3>
       <p class="lead">Every package includes all activities and a take-home creation. Sibling discounts because music is better together.</p>
 
       <div class="cards">
@@ -533,12 +429,6 @@
           <h4>Single Explorer</h4>
           <div class="price">$100<small>/child</small></div>
           <div class="desc">One child, one full afternoon of instruments, songwriting, and take-home creation.</div>
-          <div class="btn-label">Reserve your spot</div>
-          <div class="btn-group">
-            <a href="https://www.bestsoundla.com/event-details/music-creation-playground-june-28th" target="_blank" rel="noopener" class="btn">
-              <span class="btn-day">Sun</span><span class="btn-date">June 28</span>
-            </a>
-          </div>
         </div>
 
         <div class="card popular">
@@ -549,12 +439,6 @@
           <h4>Sibling Duo</h4>
           <div class="price">$180<small>/2 kids</small></div>
           <div class="desc">Bring a sibling — $90 each. Music is better together.</div>
-          <div class="btn-label">Reserve your spot</div>
-          <div class="btn-group">
-            <a href="https://www.bestsoundla.com/event-details/music-creation-playground-june-28th" target="_blank" rel="noopener" class="btn">
-              <span class="btn-day">Sun</span><span class="btn-date">June 28</span>
-            </a>
-          </div>
         </div>
 
         <div class="card">
@@ -564,30 +448,24 @@
           <h4>Group Rate</h4>
           <div class="price">$80<small>/child (3+)</small></div>
           <div class="desc">Three or more kids — best value per child. Great for friend groups or private bookings.</div>
-          <div class="btn-label">Reserve your spot</div>
-          <div class="btn-group">
-            <a href="https://www.bestsoundla.com/event-details/music-creation-playground-june-28th" target="_blank" rel="noopener" class="btn">
-              <span class="btn-day">Sun</span><span class="btn-date">June 28</span>
-            </a>
-          </div>
         </div>
       </div>
     </div>
 
     <div class="cta-row">
-      <a href="https://www.bestsoundla.com/event-details/music-creation-playground-june-28th" target="_blank" rel="noopener" class="cta-primary">
-        Reserve June 28 Spot
+      <a href="mailto:contact@bestsoundla.com?subject=Music%20Creation%20Playground%20Waitlist" class="cta-primary">
+        Join the waitlist
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
       <a href="mailto:contact@bestsoundla.com" class="cta-ghost">Questions? Email us</a>
     </div>
 
-    <p class="foot-note">Refunds available up to 4 days before the session · <a href="tel:3237906099">323.790.6099</a></p>
+    <p class="foot-note">Prefer to talk? Call <a href="tel:3237906099">323.790.6099</a></p>
 
     <!-- FAQ -->
     <section class="faq">
       <h3>Questions, <em>answered.</em></h3>
-      <p class="lead">Everything you need to know before you save your spot.</p>
+      <p class="lead">Everything you need to know before the next session opens.</p>
 
       <div class="faq-list">
         <div class="faq-item">
@@ -596,23 +474,18 @@
         </div>
 
         <div class="faq-item">
-          <div class="q">When and where does it happen?</div>
-          <div class="a">One session: <strong>Sunday, June 28, 2026</strong>, 12–5 PM in Los Angeles. The exact address is sent to ticket holders about 2 weeks before the session.</div>
+          <div class="q">When is the next session?</div>
+          <div class="a">Next dates are still being finalized. <a href="mailto:contact@bestsoundla.com?subject=Music%20Creation%20Playground%20Waitlist">Email us to join the waitlist</a> and you'll be the first to know when the next session is announced.</div>
         </div>
 
         <div class="faq-item">
           <div class="q">What's included and how does pricing work?</div>
-          <div class="a">Your ticket covers all instruments, all activities, hands-on songwriting and recording time, and a take-home creation. Pricing: <strong>$100</strong> for one child, <strong>$180</strong> for 2 siblings ($90 each), <strong>$360</strong> for 3, and <strong>$440</strong> for 4. Music is better together.</div>
+          <div class="a">Each session runs 12–5 PM in Los Angeles. Your ticket covers all instruments, all activities, hands-on songwriting and recording time, and a take-home creation. Pricing: <strong>$100</strong> for one child, <strong>$180</strong> for 2 siblings ($90 each), <strong>$360</strong> for 3, and <strong>$440</strong> for 4. Music is better together.</div>
         </div>
 
         <div class="faq-item">
           <div class="q">How many kids per session?</div>
-          <div class="a">Each session is capped at <strong>40 kids</strong> to keep things hands-on. Spots fill fast — reserve early to lock in your preferred date.</div>
-        </div>
-
-        <div class="faq-item">
-          <div class="q">What's the refund policy?</div>
-          <div class="a">Full refunds are available up to <strong>4 days before</strong> the event start time. No refunds within 4 days of the event. Reserve early to lock in your spot.</div>
+          <div class="a">Each session is capped at <strong>40 kids</strong> to keep things hands-on. Waitlist members get first access when the next date opens.</div>
         </div>
 
         <div class="faq-item">
